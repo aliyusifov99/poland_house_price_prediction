@@ -1,8 +1,10 @@
 
 ## Project structure
+### csv/
+Contains all csv files used in the project
 
 ### data/
-Contains all data files used in the project. The raw data folder holds the original data files, while the processed data folder contains cleaned and preprocessed files. 
+Contains data files that was merged from csvs used in the project. The raw data folder holds the original data files, while the processed data folder contains cleaned and preprocessed files. 
 
 ### notebooks/
 Contains Jupyter notebooks for different stages of the project:
@@ -45,3 +47,63 @@ Holds configuration files for the project, including settings for DVC, MLflow, a
 - **mlflow.db**: Database file for MLflow tracking.
 - **dvc.lock**: Lock file for DVC to ensure reproducibility.
 
+
+
+	project-root/
+│
+├── csv/
+│   ├── housing/
+│   │   └── apartments_pl_2023_08.csv
+						....
+│   ├── rent/
+│   │   └── apartments_rent_pl_2023_11.csv
+							....
+│
+├── data/
+│   ├── raw/
+│   │   ├── housing/
+│   │   │   └── apartments.csv
+│   │   ├── rent/
+│   │       └── rent.csv
+│   ├── processed/
+│       ├── housing/
+│       │   └── apartments_cleaned.csv
+│       ├── rent/
+│           └── rent_cleaned.csv
+│
+├── notebooks/
+│   ├── eda/
+│   │   └── eda_notebook.ipynb
+│   ├── model_experiments/
+│       └── model_experiment_notebook.ipynb
+│
+├── src/
+│   ├── data/
+│   │   ├── load_data.py
+│   │   ├── preprocess_data.py
+│   │   └── data_utils.py
+│   ├── models/
+│   │   ├── train_model.py
+│   │   ├── evaluate_model.py
+│   │   └── predict.py
+│   ├── api/
+│       ├── main.py
+│       └── predict_api.py
+│
+├── ui/
+│   ├── app.py
+│   ├── components/
+│
+├── configs/
+│   ├── config.yaml
+│   ├── dvc.yaml
+│   ├── mlflow.yaml
+│
+├── .dvc/
+│
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── setup.py
+├── mlflow.db
+└── dvc.lock
