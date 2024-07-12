@@ -1,0 +1,5 @@
+outs:
+- md5: 8c0204761d930fc9188725688a79f9e3
+  size: 21273040
+  hash: md5
+  path: train_housing.csv

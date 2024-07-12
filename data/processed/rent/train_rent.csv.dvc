@@ -1,0 +1,5 @@
+outs:
+- md5: 1f1220d64fba46047579be951d610b8d
+  size: 7532771
+  hash: md5
+  path: train_rent.csv

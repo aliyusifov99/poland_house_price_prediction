@@ -1,0 +1,5 @@
+outs:
+- md5: 067f892ff7bde3f72a4610fc0a8a81b2
+  size: 1882875
+  hash: md5
+  path: test_rent.csv
