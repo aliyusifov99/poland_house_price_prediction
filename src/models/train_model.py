@@ -28,9 +28,7 @@ def train_model(train_path: str, model_type: str, model_name: str, experiment_na
     y_val = val_df['price']
     
     # Initialize model
-    if model_type == 'random_forest':
-        model = RandomForestRegressor()
-    elif model_type == 'lightgbm':
+    if model_type == 'lightgbm':
         model = lgb.LGBMRegressor()
     elif model_type == 'xgboost':
         model = xgb.XGBRegressor()
@@ -68,8 +66,8 @@ def train_model(train_path: str, model_type: str, model_name: str, experiment_na
         os.makedirs('models', exist_ok=True)
         
         # Save model to a file using joblib
-        joblib.dump(model, f'models/{model_name}.pkl')
-        print(f"Model saved in models/{model_name}.pkl")
+        joblib.dump(model, f'models_pickle/{model_name}.pkl')
+        print(f"Model saved in models_pickle/{model_name}.pkl")
 
         print(f"Model: {model_name}")
         print(f"Training R2: {train_r2}")
