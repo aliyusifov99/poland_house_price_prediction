@@ -27,13 +27,13 @@ experiments = [
     {
         "train_path": "data/processed/housing/train_housing.csv",
         "test_path": "data/processed/housing/test_housing.csv",
-        "models": [ "catboost", "xgboost", "lightgbm"],
+        "models": ["random_forest","catboost", "xgboost", "lightgbm"],
         "experiment_name": "apartments_prediction"
     },
     {
         "train_path": "data/processed/rent/train_rent.csv",
         "test_path": "data/processed/rent/test_rent.csv",
-        "models": ["catboost", "xgboost", "lightgbm"],
+        "models": ["random_forest","catboost", "xgboost", "lightgbm"],
         "experiment_name": "rent_prediction"
     }
 ]

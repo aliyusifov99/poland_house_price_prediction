@@ -1,13 +1,12 @@
-# src/models/train_model.py
 import os
 import pandas as pd
 import mlflow
 import mlflow.sklearn
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.ensemble import RandomForestRegressor
 import lightgbm as lgb
 import xgboost as xgb
+from sklearn.ensemble import RandomForestRegressor
 from catboost import CatBoostRegressor
 import joblib
 
@@ -28,7 +27,9 @@ def train_model(train_path: str, model_type: str, model_name: str, experiment_na
     y_val = val_df['price']
     
     # Initialize model
-    if model_type == 'lightgbm':
+    if model_type == 'random_forest':
+        model = RandomForestRegressor()
+    elif model_type == 'lightgbm':
         model = lgb.LGBMRegressor()
     elif model_type == 'xgboost':
         model = xgb.XGBRegressor()
@@ -41,7 +42,6 @@ def train_model(train_path: str, model_type: str, model_name: str, experiment_na
     mlflow.set_experiment(experiment_name)
     with mlflow.start_run(run_name=model_name):
         # Train model
-        print(f"Training {model_name} model")
         model.fit(X_train, y_train)
         
         # Predict on training set
@@ -63,11 +63,10 @@ def train_model(train_path: str, model_type: str, model_name: str, experiment_na
         mlflow.sklearn.log_model(model, model_name)
         
         # Ensure the models directory exists
-        os.makedirs('models', exist_ok=True)
+        os.makedirs('models_pickle', exist_ok=True)
         
         # Save model to a file using joblib
         joblib.dump(model, f'models_pickle/{model_name}.pkl')
-        print(f"Model saved in models_pickle/{model_name}.pkl")
 
         print(f"Model: {model_name}")
         print(f"Training R2: {train_r2}")
