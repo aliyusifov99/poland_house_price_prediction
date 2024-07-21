@@ -1,3 +1,4 @@
+# src/api/prediction_routes.py
 from fastapi import APIRouter, HTTPException
 import joblib
 import pandas as pd
@@ -14,15 +15,21 @@ from custom_label_encoder import CustomLabelEncoder
 
 router = APIRouter()
 
+# Determine the correct paths for the models
+model_dir = "/app/models_pickle"
+apartment_model_path = os.path.join(model_dir, 'random_forest_apartments.pkl')
+rent_model_path = os.path.join(model_dir, 'random_forest_rent.pkl')
+
 # Load the trained model and processors for apartments
-apartment_model = joblib.load('C:/MLProjects/poland_house_price_prediction/models_pickle/random_forest_apartments.pkl')
-apartment_encoders = joblib.load('C:/MLProjects/poland_house_price_prediction/processors_pickle/housing_encoders.pkl')
-apartment_scaler = joblib.load('C:/MLProjects/poland_house_price_prediction/processors_pickle/housing_scaler.pkl')
+apartment_model = joblib.load(apartment_model_path)
+apartment_encoders = joblib.load('/app/processors_pickle/housing_encoders.pkl')
+apartment_scaler = joblib.load('/app/processors_pickle/housing_scaler.pkl')
 
 # Load the trained model and processors for rent
-rent_model = joblib.load('C:/MLProjects/poland_house_price_prediction/models_pickle/random_forest_rent.pkl')
-rent_encoders = joblib.load('C:/MLProjects/poland_house_price_prediction/processors_pickle/rent_encoders.pkl')
-rent_scaler = joblib.load('C:/MLProjects/poland_house_price_prediction/processors_pickle/rent_scaler.pkl')
+rent_model = joblib.load(rent_model_path)
+rent_encoders = joblib.load('/app/processors_pickle/rent_encoders.pkl')
+rent_scaler = joblib.load('/app/processors_pickle/rent_scaler.pkl')
+
 
 @router.post("/predict")
 def predict(features: ApartmentFeatures):

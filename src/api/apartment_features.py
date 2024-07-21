@@ -1,3 +1,4 @@
+# src/api/apartment_features.py
 from pydantic import BaseModel
 
 class ApartmentFeatures(BaseModel):
