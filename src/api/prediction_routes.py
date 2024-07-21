@@ -7,11 +7,6 @@ import os
 from src.api.apartment_features import ApartmentFeatures
 from src.api.preprocess import preprocess_input
 
-# Ensure the custom_label_encoder module is available in the path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data')))
-
-# Adjust the import path for custom label encoder
-from custom_label_encoder import CustomLabelEncoder
 
 router = APIRouter()
 
