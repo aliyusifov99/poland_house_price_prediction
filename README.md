@@ -1,11 +1,11 @@
-
 # Poland House Price Prediction
 
-This project is a comprehensive application for predicting house and rent prices in Poland using various machine learning models. The application is built with FastAPI for the backend API and Streamlit for the frontend UI. The project includes data preprocessing, model training, and deployment on Google Cloud Platform (GCP) using Cloud Run.
+This project is a comprehensive application for predicting house and rent prices in Poland using various machine learning models. The application is built with FastAPI for the backend API and Streamlit for the frontend UI. The project includes data preprocessing, data versioning, model training, and deployment on Google Cloud Platform (GCP).
 
 ## Table of Contents
 
 - [Project Overview](#project-overview)
+- [Video Demo](#video-demo)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Prerequisites](#prerequisites)
@@ -17,7 +17,7 @@ This project is a comprehensive application for predicting house and rent prices
 
 ## Project Overview
 
-The goal of this project is to provide a web application that can predict house and rent prices based on various features such as location, size, and amenities. The backend API is implemented using FastAPI, and the frontend is built with Streamlit. The application is containerized using Docker and deployed on Google Cloud Run.
+The goal of this project is to provide a web application that can predict house and rent prices based on various features such as location, size, and amenities. The backend API is implemented using FastAPI, and the frontend is built with Streamlit. The application is containerized using Docker and deployed on Google Cloud Run. Data is versioned using DVC(Data Version Control).
 
 **Try the Website**: [Poland House Price Prediction](https://streamlit-frontend-2vop66ad7a-uc.a.run.app/)
 
@@ -27,20 +27,23 @@ Here is a video demo of the application in action:
 
 [![Video Demo](https://img.youtube.com/vi/VTzhQpQiuG4/0.jpg)](https://youtu.be/VTzhQpQiuG4)
 
+## Data Source
+
+The dataset used in this project is sourced from [Kaggle: Apartment Prices in Poland](https://www.kaggle.com/datasets/krzysztofjamroz/apartment-prices-in-poland).
+
 ## Features
 
-- **Explaratory Data Analysis**: Analyzing features of the dataset for both renting and apartment prices.
+- **Exploratory Data Analysis**: Analyzing features of the dataset for both renting and apartment prices.
 - **Data Processing**: Scripts for loading, preprocessing, and transforming raw data.
 - **Data Versioning**: Using DVC (Data Version Control) for versioning datasets to Google Drive.
-- **Model Training**: Training scripts for multiple models (Random Forest, CatBoost, XGBoost, LightGBM).
+- **Model Training**: Training scripts for multiple models (Random Forest, CatBoost, XGBoost, LightGBM) and monitoring the results using MLFlow.
 - **API**: FastAPI-based backend for serving predictions.
 - **Frontend**: Streamlit-based web application for user interaction.
-- **Deployment**: Dockerized setup for easy deployment on GCP Cloud Run.
+- **Deployment**: Dockerized setup for deployment on GCP Cloud Run.
 
 ## Tech Stack
 
 - ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-- ![Uvicorn](https://img.shields.io/badge/Uvicorn-000000?style=for-the-badge&logo=uvicorn&logoColor=white)
 - ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
 - ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 - ![Joblib](https://img.shields.io/badge/Joblib-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -123,10 +126,9 @@ Here is a video demo of the application in action:
      --allow-unauthenticated \
      --memory 1200Mi
    ```
-
 ## Contributing
 
-Contributions are welcome! 
+Contributions are welcome!
 
 ## Connect with Me
 
@@ -137,6 +139,7 @@ Feel free to reach out or follow my work through the following platforms:
 - [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/aliyusifovpy)
 - [![Portfolio](https://img.shields.io/badge/Personal_Website-4CAF50?style=for-the-badge&logo=google-earth&logoColor=white)](https://www.aliyusifovai.com/)
 - [![Support](https://img.shields.io/badge/Buy_Me_A_Coffee-F7DF1E?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/aliyusifov)
+
 
 
 
