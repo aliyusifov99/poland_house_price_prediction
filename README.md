@@ -11,9 +11,9 @@ This project is a comprehensive application for predicting house and rent prices
 - [Prerequisites](#prerequisites)
 - [Setup Instructions](#setup-instructions)
 - [Deployment](#deployment)
-- [Connect with Me](#connect-with-me)
 - [Contributing](#contributing)
-- [License](#license)
+- [Connect with Me](#connect-with-me)
+
 
 ## Project Overview
 
